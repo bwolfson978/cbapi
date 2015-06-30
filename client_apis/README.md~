@@ -76,6 +76,18 @@ The following APIs are versioned.
 - [`/api/v1/banning/blacklist/<md5>`] (#apiv1banningblacklistmd5) - Specific banned md5 hash retrieval,update, and disabling
 - [`/api/v1/banning/whitelist`] (#apiv1banningwhitelist) - Retrieval of the banned md5 hash whitelist
 - [`/api/v1/banning/restrictions`] (#apiv1banningrestrictions) - Retrieval of the banned md5 hash restrictions
+#### Dashboard
+- [`/api/v1/dashboard/alliance`](#apiv1dashboardalliance) - Dashboard alliance info
+- [`/api/v1/dashboard/hosts`](#apiv1dashboardhosts) - Dashboard hosts info
+- [`/api/v1/dashboard/statistics`](#apiv1dashboardstatistics) - Dashboard statistics info
+
+
+#### Detection
+- [`/api/v1/detect/report/<feed_name>/unresolvedalertsbyseverity/<count>/<sort>`](#apiv1detectreportfeednameunresolvedalertsbyseveritycountsort)
+- [`/api/v1/detect/report/<feed_name>/unresolvedalerttrend/<days>`]
+
+#### Event
+
 
 #### Licensing
 - [`/api/v1/license`](#apiv1license) - Server license status, requests, and application of new license
@@ -602,6 +614,7 @@ GET http://192.168.206.132/api/v1/process/7078511340675742078/1/preview/?q=windo
 
 ```
 -----
+
 ####  `/api/v1/binary`
 Binary search.  Parameters passed as query string.
 
