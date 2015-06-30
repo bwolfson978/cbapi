@@ -6,7 +6,7 @@
 
 import json
 import requests
-import shutil
+import shutill
 
 class CbApi(object):
     """ Python bindings for Carbon Black API 
