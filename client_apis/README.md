@@ -47,6 +47,7 @@ The following APIs are versioned.
 - [`/api/group`](#apigroup) - Sensor Group enumeration and addition
 - [`/api/group/<group_id>`](#apigroup<group_id>) Specific sensor group information retrieval and deletion
 
+
 #### Watchlists
 - [`/api/v1/watchlist`](#apiv1watchlist) - Watchlist enumeration, addition, modification, and deletion
 
@@ -1093,6 +1094,8 @@ GET /api/v1/feed/6/action
 ```
 
 ####/api/v1/feed/id/report/(report_id)
+Feed report enumeration
+
 *Supports* `GET` for `/api/v1/feed/id/report/(report_id)` 
 
 ##### Parameters:
@@ -1106,8 +1109,44 @@ A JSON object for a list of feed reports has the following structure:
 - A list of reports, each with the following structure:
     - `score`: severity score
     - `title`: report title
+    - `create_time`: time of creation
+    - `timestamp`: timestamp on the report
+    - `feed_category`: Category of feed this report is on
+    - `iocs`: Incidents of Compromise in the report
+    - `is_ignored`: If the threat is ignored
+    - `feed_name`: name of the feed
+    - `has_query`: whether the feed report has a query or not
+    - `feed_id`: id of the feed
+    - `link`: link to the feed report analysis
+    - `id`: report id
 
+Example:
+```
+GET https://172.16.100.109/api/v1/feed/6/report/e33cd6a4e2a0046e0fe3e841134a5888
 
+{   
+    "score": 1
+    "title": "[1/57] VirusTotal report for e33cd6a4e2a0046e0fe3e841134a5888 (sha256: aba7edcaab4769b8077bc8e89f3d5caa57f96e0f5572f2139e0726d58db4db76)",
+    "create_time": 1430984032, 
+    "timestamp": 1430984032, 
+    "feed_category": "Partner", 
+    "iocs": {"md5": ["e33cd6a4e2a0046e0fe3e841134a5888"]}, 
+    "is_ignored": false, 
+    "feed_name": "virustotal",
+    "has_query": false, 
+    "feed_id": 6, 
+    "link": "https://www.virustotal.com/file/aba7edcaab4769b8077bc8e89f3d5caa57f96e0f5572f2139e0726d58db4db76/analysis/1428791153/", 
+    "id": "e33cd6a4e2a0046e0fe3e841134a5888",
+    
+}
+```
+#### /api/v1/feed/<id>/synchronize
+Sync a feed
+
+*Supports* `POST` for `/api/v1/feed/<id>/synchronize`
+
+#### Parameters:
+- `id`: id of the feed to be synced
 
 -----
 

@@ -2,6 +2,8 @@ __author__ = 'bwolfson'
 
 import sys
 import optparse
+import requests
+requests.packages.urllib3.disable_warnings()
 
 # in the github repo, cbapi is not in the example directory
 sys.path.append('../src/cbapi')
@@ -19,7 +21,7 @@ def build_cli_parser():
                       help="API Token for Carbon Black server")
     parser.add_option("-n", "--no-ssl-verify", action="store_false", default=True, dest="ssl_verify",
                       help="Do not verify server SSL certificate.")
-    parser.add_option("-i", "--group_id", action="store", default=True, dest= "group_id",
+    parser.add_option("-i", "--group_id", action="store", default=None, dest= "group_id",
                       help = "id of sensor group whose datasharing configs to enumerate")
     return parser
 
