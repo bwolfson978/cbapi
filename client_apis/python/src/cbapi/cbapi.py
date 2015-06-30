@@ -9,7 +9,7 @@ import requests
 import shutil
 
 class CbApi(object):
-class CbApi(object)
+
     """ Python bindings for Carbon Black API
     Example:
 

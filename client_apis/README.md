@@ -53,8 +53,12 @@ The following APIs are versioned.
 #### Feeds
 - [`/api/v1/feed`](#apiv1feed) - Feed enumeration and addition
 - [`/api/v1/feed/<id>`](#apiv1feedid) - Feed modification and deletion
-- [`/api/v1/feed/id/action`](#apiv1feedidaction) - Feed action enumeration and addition
-- [`/api/v1/feed/id/action/<action_id>`](#apiv1feedactionactionid) - Feed action updating and deletion
+- [`/api/v1/feed/<id>/action`](#apiv1feedidaction) - Feed action enumeration and addition
+- [`/api/v1/feed/<id>/action/<action_id>`](#apiv1feedactionactionid) - Feed action updating and deletion
+- [`/api/v1/feed/<id>/report`](#apiv1feedidreport) - Reports for a specific feed
+- [`/api/v1/feed/<id>/report/<report_id>`](#apiv1feedidreportid) - specific report for a feed
+- [`/api/v1/feed/<id>/requirements`](#apiv1feedidrequirements) - Requirements for a feed
+- [`/api/v1/feed/<id>/synchronize`](#apiv1feedidsynchronize) - synchronize a feed
 
 #### Users
 - [`/api/users`](#apiusers) - User enumeration
@@ -101,7 +105,10 @@ The following APIs are versioned.
 - [`/api/v1/detect/report/unresolvedusersbyseverity/<count>/<sort>`](#apiv1detectreportunresolvedusersbyseveritycountsort)
 - [`/api/v1/detect/report/unresolvedusersbytime/<count>/<sort>`](apiv1detectreportunresolvedusersbytimecountsort)
 
-#### Event
+#### Tagged Events
+- [`/api/tagged_event`](#apitaggedevent) - Add a tagged event to an investigation
+- [`/api/tagged_event/<id>`](#apitaggedeventid) - info on specific tagged events
+- [`/api/tagged_events/<process_id>`](#apitaggedeventsprocessid) - info on specific tagged events by process id
 
 
 #### Licensing
@@ -1085,10 +1092,22 @@ GET /api/v1/feed/6/action
 ]
 ```
 
-####/api/v1/feed/id/report
-*Supports* `GET` for `/api/v1/feed/id/report`
+####/api/v1/feed/id/report/(report_id)
+*Supports* `GET` for `/api/v1/feed/id/report/(report_id)` 
 
-####
+##### Parameters:
+- `report_id`: OPTIONAL the id of a specific report
+
+##### Returns:
+- With no report id parameter, `GET /api/v1/feed/id/report` returns a JSON object with the structure of a list of reports for a specific feed
+- With a report id parameter, `GET /api/v1/feed/id/report/report_id` returns the report with id "report_id" for the feed with id "id"
+
+A JSON object for a list of feed reports has the following structure:
+- A list of reports, each with the following structure:
+    - `score`: severity score
+    - `title`: report title
+
+
 
 -----
 

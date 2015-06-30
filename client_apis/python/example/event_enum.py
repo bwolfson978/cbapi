@@ -5,7 +5,8 @@ import optparse
 
 # in the github repo, cbapi is not in the example directory
 sys.path.append('../src/cbapi')
-
+import requests
+requests.packages.urllib3.disable_warnings()
 import cbapi
 
 def build_cli_parser():
@@ -37,16 +38,13 @@ def main(argv):
 
     events = cb.event_enum(opts.id)
     count = 1
+    print events
     for event in events:
         print ""
         print "Event Number: %s" % count
         count = count + 1
         for field in event:
-            if field == "event_data":
-                for entry in event['event_data']:
-                    event_data = event['event_data']
-                    print "%-25s : %s" % (entry, event_data[entry])
-                print "%-20s : %s" % (field, event[field])
+            print "%-20s : %s" % (field, event[field])
 
 
 if __name__ == "__main__":

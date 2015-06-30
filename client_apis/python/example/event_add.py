@@ -5,6 +5,8 @@ import optparse
 
 # in the github repo, cbapi is not in the example directory
 sys.path.append('../src/cbapi')
+import requests
+requests.packages.urllib3.disable_warnings()
 
 import cbapi
 

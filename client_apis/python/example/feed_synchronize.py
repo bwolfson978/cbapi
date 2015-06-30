@@ -2,9 +2,12 @@ __author__ = 'bwolfson'
 
 import sys
 import optparse
+import requests
+requests.packages.urllib3.disable_warnings()
 
 # in the github repo, cbapi is not in the example directory
 sys.path.append('../src/cbapi')
+
 
 import cbapi
 

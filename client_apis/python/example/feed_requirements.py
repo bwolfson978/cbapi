@@ -5,6 +5,8 @@ import optparse
 
 # in the github repo, cbapi is not in the example directory
 sys.path.append('../src/cbapi')
+import requests
+requests.packages.urllib3.disable_warnings()
 
 import cbapi
 
@@ -38,8 +40,6 @@ def main(argv):
     for requirement in requirements:
         print requirement
 
-    sync_result = cb.feed_synchronize(opts.feedname, True)
-    print sync_result
 
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))

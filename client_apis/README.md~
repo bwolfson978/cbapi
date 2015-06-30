@@ -53,8 +53,12 @@ The following APIs are versioned.
 #### Feeds
 - [`/api/v1/feed`](#apiv1feed) - Feed enumeration and addition
 - [`/api/v1/feed/<id>`](#apiv1feedid) - Feed modification and deletion
-- [`/api/v1/feed/id/action`](#apiv1feedidaction) - Feed action enumeration and addition
-- [`/api/v1/feed/id/action/<action_id>`](#apiv1feedactionactionid) - Feed action updating and deletion
+- [`/api/v1/feed/<id>/action`](#apiv1feedidaction) - Feed action enumeration and addition
+- [`/api/v1/feed/<id>/action/<action_id>`](#apiv1feedactionactionid) - Feed action updating and deletion
+- [`/api/v1/feed/<id>/report`](#apiv1feedidreport) - Reports for a specific feed
+- [`/api/v1/feed/<id>/report/<report_id>`](#apiv1feedidreportid) - specific report for a feed
+- [`/api/v1/feed/<id>/requirements`](#apiv1feedidrequirements) - Requirements for a feed
+- [`/api/v1/feed/<id>/synchronize`](#apiv1feedidsynchronize) - synchronize a feed
 
 #### Users
 - [`/api/users`](#apiusers) - User enumeration
@@ -93,7 +97,7 @@ The following APIs are versioned.
 - [`/api/v1/detect/report/currentalertstatus`](#apiv1detectreportcurrentalertstatus)
 - [`/api/v1/detect/report/currentmonitoringstatus`](#apiv1detectreportcurrentmonitoringstatus)
 - [`/api/v1/detect/report/hosthygiene/<int:days>`](#apiv1detectreporthosthygieneintdays)
-- [`/api/v1/detect/report/unresolvedalertsbyseverity/<count>/<sort>)(#apiv1detectreportunresolvedalertsbyseveritycountsort)
+- [`/api/v1/detect/report/unresolvedalertsbyseverity/<count>/<sort>`](#apiv1detectreportunresolvedalertsbyseveritycountsort)
 - [`/api/v1/detect/report/unresolvedalertsbytime/<count>/<sort>`](#apiv1detectreportunresolvedalertsbytimecountsort)
 - [`/api/v1/detect/report/unresolvedalerttrend/<days>`](#apiv1detectreportunresolvedalerttrenddays)
 - [`/api/v1/detect/report/unresolvedhostsbyseverity/<count>/<sort>`](#apiv1detectreportunresolvedhostsbyseveritycountsort)
@@ -101,8 +105,10 @@ The following APIs are versioned.
 - [`/api/v1/detect/report/unresolvedusersbyseverity/<count>/<sort>`](#apiv1detectreportunresolvedusersbyseveritycountsort)
 - [`/api/v1/detect/report/unresolvedusersbytime/<count>/<sort>`](apiv1detectreportunresolvedusersbytimecountsort)
 
-
-#### Event
+#### Tagged Events
+- [`/api/tagged_event`](#apitaggedevent) - Add a tagged event to an investigation
+- [`/api/tagged_event/<id>`](#apitaggedeventid) - info on specific tagged events
+- [`/api/tagged_events/<process_id>`](#apitaggedeventsprocessid) - info on specific tagged events by process id
 
 
 #### Licensing
