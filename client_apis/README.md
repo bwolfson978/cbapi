@@ -48,6 +48,7 @@ The following APIs are versioned.
 - [`/api/group/<group_id>`](#apigroup<group_id>) Specific sensor group information retrieval and deletion
 
 
+
 #### Watchlists
 - [`/api/v1/watchlist`](#apiv1watchlist) - Watchlist enumeration, addition, modification, and deletion
 

@@ -47,6 +47,7 @@ The following APIs are versioned.
 - [`/api/group`](#apigroup) - Sensor Group enumeration and addition
 - [`/api/group/<group_id>`](#apigroup<group_id>) Specific sensor group information retrieval and deletion
 
+
 #### Watchlists
 - [`/api/v1/watchlist`](#apiv1watchlist) - Watchlist enumeration, addition, modification, and deletion
 
@@ -1093,6 +1094,8 @@ GET /api/v1/feed/6/action
 ```
 
 ####/api/v1/feed/id/report/(report_id)
+Feed report enumeration
+
 *Supports* `GET` for `/api/v1/feed/id/report/(report_id)` 
 
 ##### Parameters:
@@ -1137,8 +1140,13 @@ GET https://172.16.100.109/api/v1/feed/6/report/e33cd6a4e2a0046e0fe3e841134a5888
     
 }
 ```
+#### /api/v1/feed/<id>/synchronize
+Sync a feed
 
+*Supports* `POST` for `/api/v1/feed/<id>/synchronize`
 
+#### Parameters:
+- `id`: id of the feed to be synced
 
 -----
 
