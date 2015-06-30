@@ -89,6 +89,17 @@ The following APIs are versioned.
 - [`/api/v1/detect/report/adminsbyalertsresolved/<count>/<sort>`](#apiv1detectreportadminsbyalertsresolvedcountsort)
 - [`/api/v1/detect/report/adminsbyresolvedtime/<count>/<sort>`](#apiv1detectreportadminsbyresolvedtimecountsort)
 - [`/api/v1/detect/report/alertresolutionaverage<int:days>`](#apiv1detectreport/alertresolutionaverageintdays)
+- [`/api/v1/detect/report/binarydwell/<int:days>`](#apiv1detectreportbinarydwellintdays)
+- [`/api/v1/detect/report/currentalertstatus`](#apiv1detectreportcurrentalertstatus)
+- [`/api/v1/detect/report/currentmonitoringstatus`](#apiv1detectreportcurrentmonitoringstatus)
+- [`/api/v1/detect/report/hosthygiene/<int:days>`](#apiv1detectreporthosthygieneintdays)
+- [`/api/v1/detect/report/unresolvedalertsbyseverity/<count>/<sort>)(#apiv1detectreportunresolvedalertsbyseveritycountsort)
+- [`/api/v1/detect/report/unresolvedalertsbytime/<count>/<sort>`](#apiv1detectreportunresolvedalertsbytimecountsort)
+- [`/api/v1/detect/report/unresolvedalerttrend/<days>`](#apiv1detectreportunresolvedalerttrenddays)
+- [`/api/v1/detect/report/unresolvedhostsbyseverity/<count>/<sort>`](#apiv1detectreportunresolvedhostsbyseveritycountsort)
+- [`/api/v1/detect/report/unresolvedhostsbytime/<count>/<sort>`](#apiv1detectreportunresolvedhostsbytimecountsort)
+- [`/api/v1/detect/report/unresolvedusersbyseverity/<count>/<sort>`](#apiv1detectreportunresolvedusersbyseveritycountsort)
+- [`/api/v1/detect/report/unresolvedusersbytime/<count>/<sort>`](apiv1detectreportunresolvedusersbytimecountsort)
 
 
 #### Event

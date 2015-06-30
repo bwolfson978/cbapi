@@ -84,7 +84,12 @@ The following APIs are versioned.
 
 #### Detection
 - [`/api/v1/detect/report/<feed_name>/unresolvedalertsbyseverity/<count>/<sort>`](#apiv1detectreportfeednameunresolvedalertsbyseveritycountsort)
-- [`/api/v1/detect/report/<feed_name>/unresolvedalerttrend/<days>`]
+- [`/api/v1/detect/report/<feed_name>/unresolvedalertsbytime/<count>/<sort>`](#apiv1detectreportfeednameunresolvedalertsbytimecountsort)
+- [`/api/v1/detect/report/<feed_name>/unresolvedalerttrend/<days>`](#apiv1detectreportfeednameunresolvedalerttrenddays)
+- [`/api/v1/detect/report/adminsbyalertsresolved/<count>/<sort>`](#apiv1detectreportadminsbyalertsresolvedcountsort)
+- [`/api/v1/detect/report/adminsbyresolvedtime/<count>/<sort>`](#apiv1detectreportadminsbyresolvedtimecountsort)
+- [`/api/v1/detect/report/alertresolutionaverage<int:days>`](#apiv1detectreport/alertresolutionaverageintdays)
+
 
 #### Event
 
