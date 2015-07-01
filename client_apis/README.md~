@@ -46,6 +46,9 @@ The following APIs are versioned.
 - [`/api/v1/sensor/<sensor_id>`](#apiv1sensorsensorid) -Sensor sync with event_log_flush_time
 - [`/api/group`](#apigroup) - Sensor Group enumeration and addition
 - [`/api/group/<group_id>`](#apigroup<group_id>) Specific sensor group information retrieval and deletion
+- [`/api/group/<group_id>/datasharing`](#apiv1groupgroupiddatasharing) Enumeration of datasharing settings
+- [`/api/group/<group_id>/datasharing/<config_id>`](#apigroupgroupiddatasharingconfigid) A specific configuration of datasharing settings
+
 
 
 #### Watchlists
@@ -81,11 +84,11 @@ The following APIs are versioned.
 - [`/api/v1/banning/blacklist/<md5>`] (#apiv1banningblacklistmd5) - Specific banned md5 hash retrieval,update, and disabling
 - [`/api/v1/banning/whitelist`] (#apiv1banningwhitelist) - Retrieval of the banned md5 hash whitelist
 - [`/api/v1/banning/restrictions`] (#apiv1banningrestrictions) - Retrieval of the banned md5 hash restrictions
+
 #### Dashboard
 - [`/api/v1/dashboard/alliance`](#apiv1dashboardalliance) - Dashboard alliance info
 - [`/api/v1/dashboard/hosts`](#apiv1dashboardhosts) - Dashboard hosts info
 - [`/api/v1/dashboard/statistics`](#apiv1dashboardstatistics) - Dashboard statistics info
-
 
 #### Detection
 - [`/api/v1/detect/report/<feed_name>/unresolvedalertsbyseverity/<count>/<sort>`](#apiv1detectreportfeednameunresolvedalertsbyseveritycountsort)
@@ -1616,9 +1619,29 @@ GET: https://172.16.100.109/api/group/1
     vdi_enabled: false
 }]
 ```
+####/api/v1/group/<int:group_id>/datasharing/<int:config_id>
+Enumeration, deletion, addition, and updating of group datasharing configurations
+
+*Supports*: `GET`, `POST`, and `DELETE` for `/api/v1/group/group_id/datasharing`
+*Supports*: `GET` and `POST` for `/api/v1/group/group_id/datasharing/config_id`
+
+####Returns:
+
+- With no config_id parameter, `GET /api/v1/group/group_id/datasharing` returns the datasharing configurations for the group with id "group_id"
+- With no config_id parameter, `POST /api/v1/group/group_id/datasharing` returns the added configuration info
+
+- With a config_id parameter, `GET /api/v1/group/group_id/datasharing/config_id` returns the datasharing info for the configuration with id "config_id"
+- With a config_id parameter, `DELETE /api/v1/group/group_id/datasharing/config_id` returns 
+
+
+
+
 
 #### /api/v1/banning/blacklist/(md5)
 Banned hash enumeration, modification, addition, retrieval, and disabling.
+
+*Supports*: `GET` and `POST` for `/api/v1/banning/blacklist`
+*Supports*: `GET`, `PUT`, and `DELETE` for `/api/v1/banning/blacklist/md5`
 
 #####Returns:
 
