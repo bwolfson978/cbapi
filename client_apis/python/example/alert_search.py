@@ -1,10 +1,11 @@
 import sys
-import time
-import struct
-import socket
 import optparse
 #added pprint to output everything
 import pprint
+
+from requests.packages import urllib3
+urllib3.disable_warnings()
+
 sys.path.append('../src/cbapi')
 
 import cbapi
@@ -22,6 +23,10 @@ def build_cli_parser():
                       help="Do not verify server SSL certificate.")
     parser.add_option("-q", "--query", action="store", default="", dest="query",
                       help="The query string of alerts to search.")
+    parser.add_option("-r", "--rows", action="store", type = int, default = 10, dest = "rows",
+                      help = "OPTIONAL: number of rows of results to display, i.e. pagesize")
+    parser.add_option("-s", "--start", action = "store", type = int, default = 0, dest = "start",
+                      help = "OPTIONAL: starting row number")
     return parser
 
 def main(argv):
@@ -42,5 +47,6 @@ def main(argv):
         for result in results['results']:
             pprint.pprint(result)
         start = start + int(pagesize)
+
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))
